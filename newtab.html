@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Tab</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="newtab.css">
+</head>
+<body>
+  <header class="header">
+    <div class="header-left">
+      <svg class="logo-icon" width="24" height="24" viewBox="0 0 508 508" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="238" width="32" height="508" rx="16" fill="white"></rect>
+        <rect x="18.291" y="40.6953" width="32" height="635" rx="16" transform="rotate(-45 18.291 40.6953)" fill="white"></rect>
+        <rect x="467.305" y="18.0664" width="32" height="635" rx="16" transform="rotate(45 467.305 18.0664)" fill="white"></rect>
+        <rect x="508" y="238" width="32" height="508" rx="16" transform="rotate(90 508 238)" fill="white"></rect>
+      </svg>
+      <span class="logo-text">Helium</span>
+    </div>
+  </header>
+  
+  <main class="main-content">
+    <p class="prompt-text">What's on your mind?</p>
+    <div class="search-wrapper">
+      <form id="search-form" class="search-form">
+        <div class="search-input-wrapper">
+          <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <path d="m21 21-4.35-4.35"></path>
+          </svg>
+          <input 
+            type="text" 
+            id="search-input" 
+            class="search-input" 
+            placeholder="Search Google or enter a URL"
+            autofocus
+          />
+        </div>
+      </form>
+    </div>
+  </main>
+  
+  <footer class="footer">
+    <h1 class="main-heading">Surf Private. Internet without limits.</h1>
+  </footer>
+  
+  <script src="newtab.js"></script>
+</body>
+</html>
+

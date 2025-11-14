@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "New Tab",
+  "version": "1.0.0",
+  "description": "Custom new tab page with search bar",
+  "icons": {
+    "16": "favicon.svg",
+    "48": "favicon.svg",
+    "128": "favicon.svg"
+  },
+  "chrome_url_overrides": {
+    "newtab": "newtab.html"
+  },
+  "permissions": []
+}
+
