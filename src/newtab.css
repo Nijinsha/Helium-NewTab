@@ -1,3 +1,43 @@
+:root {
+  /* Dark mode colors (default) */
+  --bg-gradient-start: #0a0e2e;
+  --bg-gradient-mid: #1a1f4a;
+  --bg-gradient-end: #2d3560;
+  --text-primary: rgba(255, 255, 255, 1);
+  --text-secondary: rgba(255, 255, 255, 0.95);
+  --text-tertiary: rgba(255, 255, 255, 0.7);
+  --text-quaternary: rgba(255, 255, 255, 0.55);
+  --command-bg: rgba(255, 255, 255, 0.98);
+  --command-text: #1a1a1a;
+  --command-icon: #666;
+  --command-icon-focus: #333;
+  --command-placeholder: #999;
+  --command-placeholder-focus: #bbb;
+  --backdrop: rgba(0, 0, 0, 0.4);
+  --logo-fill: white;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    /* Light mode colors */
+    --bg-gradient-start: #f5f7fa;
+    --bg-gradient-mid: #e8ecf1;
+    --bg-gradient-end: #dde3ea;
+    --text-primary: rgba(26, 26, 26, 1);
+    --text-secondary: rgba(26, 26, 26, 0.95);
+    --text-tertiary: rgba(26, 26, 26, 0.7);
+    --text-quaternary: rgba(26, 26, 26, 0.55);
+    --command-bg: rgba(255, 255, 255, 0.98);
+    --command-text: #1a1a1a;
+    --command-icon: #666;
+    --command-icon-focus: #333;
+    --command-placeholder: #999;
+    --command-placeholder-focus: #bbb;
+    --backdrop: rgba(0, 0, 0, 0.2);
+    --logo-fill: #1a1a1a;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -14,13 +54,13 @@ html {
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-  background: linear-gradient(180deg, #0a0e2e 0%, #1a1f4a 50%, #2d3560 100%);
+  background: linear-gradient(180deg, var(--bg-gradient-start) 0%, var(--bg-gradient-mid) 50%, var(--bg-gradient-end) 100%);
   height: 100vh;
   width: 100vw;
   margin: 0;
   padding: 0;
   overflow: hidden;
-  color: white;
+  color: var(--text-primary);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -48,6 +88,7 @@ body {
   height: 26px;
   opacity: 0.95;
   transition: opacity 0.2s ease;
+  color: var(--text-secondary);
 }
 
 .logo-icon:hover {
@@ -57,7 +98,7 @@ body {
 .logo-text {
   font-size: 19px;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.95);
+  color: var(--text-secondary);
   letter-spacing: -0.3px;
 }
 
@@ -95,7 +136,7 @@ body {
 .date-display {
   font-size: 14px;
   font-weight: 400;
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--text-tertiary);
   margin: 0;
   letter-spacing: 1px;
   line-height: 1.4;
@@ -105,18 +146,24 @@ body {
 .time-display {
   font-size: 80px;
   font-weight: 300;
-  color: rgba(255, 255, 255, 1);
+  color: var(--text-primary);
   margin: 0;
   letter-spacing: -3px;
   line-height: 1;
   font-variant-numeric: tabular-nums;
-  text-shadow: 0 2px 20px rgba(255, 255, 255, 0.1);
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+}
+
+@media (prefers-color-scheme: light) {
+  .time-display {
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+  }
 }
 
 .main-heading {
   font-size: 64px;
   font-weight: 600;
-  color: white;
+  color: var(--text-primary);
   line-height: 1.1;
 }
 
@@ -152,7 +199,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.4);
+  background: var(--backdrop);
   backdrop-filter: blur(4px);
 }
 
@@ -180,22 +227,28 @@ body {
   position: relative;
   display: flex;
   align-items: center;
-  background: rgba(255, 255, 255, 0.98);
+  background: var(--command-bg);
   border-radius: 28px;
   padding: 14px 24px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.12);
   backdrop-filter: blur(10px);
 }
 
+@media (prefers-color-scheme: light) {
+  .command-input-wrapper {
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.08);
+  }
+}
+
 .command-icon {
-  color: #666;
+  color: var(--command-icon);
   margin-right: 14px;
   flex-shrink: 0;
   transition: color 0.2s ease;
 }
 
 .command-input-wrapper:focus-within .command-icon {
-  color: #333;
+  color: var(--command-icon-focus);
 }
 
 .command-input {
@@ -204,17 +257,17 @@ body {
   outline: none;
   font-size: 17px;
   background: transparent;
-  color: #1a1a1a;
+  color: var(--command-text);
   letter-spacing: -0.2px;
 }
 
 .command-input::placeholder {
-  color: #999;
+  color: var(--command-placeholder);
   transition: color 0.2s ease;
 }
 
 .command-input:focus::placeholder {
-  color: #bbb;
+  color: var(--command-placeholder-focus);
 }
 
 .footer {
@@ -231,7 +284,7 @@ body {
 .footer .main-heading {
   font-size: 12px;
   font-weight: 400;
-  color: rgba(255, 255, 255, 0.55);
+  color: var(--text-quaternary);
   line-height: 1.4;
   text-align: right;
   letter-spacing: 0.3px;
