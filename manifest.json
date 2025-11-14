@@ -4,9 +4,9 @@
   "version": "1.0.0",
   "description": "Custom new tab page with search bar",
   "icons": {
-    "16": "src/favicon.svg",
-    "48": "src/favicon.svg",
-    "128": "src/favicon.svg"
+    "16": "src/icons/icon-16.png",
+    "48": "src/icons/icon-48.png",
+    "128": "src/icons/icon-128.png"
   },
   "chrome_url_overrides": {
     "newtab": "src/newtab.html"
